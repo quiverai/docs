@@ -70,9 +70,9 @@
 		}
 	},
 	"logo": {
-		"light": "/images/logo-colorized.svg",
-		"dark": "/images/logo-colorized.svg"
-	},
+    "light": "/images/logo-wordmark.svg",
+    "dark": "/images/logo-wordmark.svg"
+  },
 	"navbar": {
 		"links": [
 			{
