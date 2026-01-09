@@ -9,92 +9,90 @@
 	},
 	"favicon": "/favicon.svg",
 	"navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Blog",
-          "icon": "newspaper",
-          "href": "https://quiver.ai/blog"
-        },
-        {
-          "anchor": "Contact",
-          "icon": "headset",
-          "href": "https://quiver.ai/contact"
-        }
-      ]
-    },
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "contact-us/guides/getting-started/scalable-vector-graphics-svg",
-              "development"
-            ]
-          },
-          {
-            "group": "Arrow 0.5",
-            "pages": [
-              "contact-us/guides/arrow-0-5/overview",
-              "essentials/markdown",
-              "essentials/code"
-            ]
-          },
-          {
-            "group": "API Integration",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          },
-          {
-            "group": "Platform",
-            "pages": [
-              "essentials/settings",
-              "contact-us/guides/platform/playground",
-              "contact-us/guides/platform/developer-platform"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoints",
-            "openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simple/quiver.openapi.yml"
-          }
-        ]
-      }
-    ]
-  },
+		"global": {
+			"anchors": [
+				{
+					"anchor": "Blog",
+					"icon": "newspaper",
+					"href": "https://quiver.ai/blog"
+				},
+				{
+					"anchor": "Contact",
+					"icon": "headset",
+					"href": "https://quiver.ai/contact"
+				}
+			]
+		},
+		"tabs": [
+			{
+				"tab": "Guides",
+				"groups": [
+					{
+						"group": "Getting started",
+						"pages": [
+							"index",
+							"quickstart",
+							"contact-us/guides/getting-started/scalable-vector-graphics-svg",
+							"development"
+						]
+					},
+					{
+						"group": "Arrow 0.5",
+						"pages": [
+							"contact-us/guides/arrow-0-5/overview",
+							"essentials/markdown",
+							"essentials/code"
+						]
+					},
+					{
+						"group": "API Integration",
+						"pages": [
+							"ai-tools/cursor",
+							"ai-tools/claude-code",
+							"ai-tools/windsurf"
+						]
+					},
+					{
+						"group": "Platform",
+						"pages": [
+							"essentials/settings",
+							"contact-us/guides/platform/playground",
+							"contact-us/guides/platform/developer-platform"
+						]
+					}
+				]
+			},
+			{
+				"tab": "API reference",
+				"groups": [
+					{
+						"group": "API documentation",
+						"pages": ["api-reference/introduction"]
+					},
+					{
+						"group": "Endpoints",
+						"openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simple/quiver.openapi.yml"
+					}
+				]
+			}
+		]
+	},
 	"logo": {
-    "light": "/images/logo-wordmark.svg",
-    "dark": "/images/logo-wordmark.svg",
-    "href": "https://quiver.ai"
-  },
+		"light": "/images/logo-wordmark.svg",
+		"dark": "/images/logo-wordmark.svg",
+		"href": "https://quiver.ai"
+	},
 	"navbar": {
 		"links": [
 			{
-				"label": "Support",
-				"href": "mailto:hi@mintlify.com"
+				"label": "Contact us",
+				"href": "https://quiver.ai/contact"
 			}
 		],
 		"primary": {
 			"type": "button",
-			"label": "Dashboard",
-			"href": "https://dashboard.mintlify.com"
+			"label": "Platform",
+			"href": "https://platform.quiver.ai"
 		}
 	},
 	"contextual": {
@@ -110,28 +108,28 @@
 		]
 	},
 	"footer": {
-    "socials": {
-      "x": "https://x.com/quiverai",
-      "github": "https://github.com/quiveri",
-      "linkedin": "https://linkedin.com/company/quiverai",
-      "website": "https://quiver.ai"
-    }
-  },
+		"socials": {
+			"x": "https://x.com/quiverai",
+			"github": "https://github.com/quiveri",
+			"linkedin": "https://linkedin.com/company/quiverai",
+			"website": "https://quiver.ai"
+		}
+	},
 	"appearance": {
 		"default": "system"
 	},
 	"fonts": {
 		"family": "Geist"
-  },
-  "background": {
-    "color": {
-      "dark": "#333333"
-    }
-  },
-  "integrations": {
-    "posthog": {
-      "apiHost": "https://us.posthog.com",
-      "apiKey": "phc_T0tw2DZmYe2T4wvkL54viSsfdXM6XGk22YrCwshpZuM"
-    }
-  }
+	},
+	"background": {
+		"color": {
+			"dark": "#333333"
+		}
+	},
+	"integrations": {
+		"posthog": {
+			"apiHost": "https://us.posthog.com",
+			"apiKey": "phc_T0tw2DZmYe2T4wvkL54viSsfdXM6XGk22YrCwshpZuM"
+		}
+	}
 }
