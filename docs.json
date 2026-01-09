@@ -83,10 +83,10 @@
     ]
   },
 	"logo": {
-		"light": "/images/logo-wordmark.svg",
-		"dark": "/images/logo-wordmark.svg",
-		"href": "https://quiver.ai"
-	},
+    "light": "/images/logo-wordmark.svg",
+    "dark": "/images/logo-wordmark-light.svg",
+    "href": "https://quiver.ai"
+  },
 	"navbar": {
 		"links": [
 			{
