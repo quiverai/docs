@@ -136,5 +136,6 @@
 			"apiHost": "https://us.posthog.com",
 			"apiKey": "phc_T0tw2DZmYe2T4wvkL54viSsfdXM6XGk22YrCwshpZuM"
 		}
-	}
+  },
+  "description": "Build with QuiverAI: Explore our API docs, guides, and dynamic examples to jumpstart your development."
 }
