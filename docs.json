@@ -79,6 +79,13 @@
             "openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simple/quiver.openapi.yml"
           }
         ]
+      },
+      {
+        "tab": "Release Notes",
+        "hidden": true,
+        "pages": [
+          "release-notes/release-notes"
+        ]
       }
     ]
   },
