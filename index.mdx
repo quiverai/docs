@@ -1,15 +1,35 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentations"
+title: "QuiverAI Platform"
+description: "Learn how to use QuiverAI models and find the right parameters in the Platform's Playground."
 ---
 
-## Setting up
+## Developer Quickstart
 
 Get your documentation site up and running in minutes
 
-<Card title="Start here" icon="rocket" horizontal href="/quickstart">
-  Follow our three step quickstart guide.
-</Card>
+```typescript
+import QuiverAI from "quiverai";
+const client = new QuiverAI();
+
+const logo = await client.svgs..generations.create({
+  model: "arrow-0.5",
+  input: "A logo for the next AI Design startup",
+});
+```
+
+<RequestExample>
+
+```typescript javascript
+import QuiverAI from "quiverai";
+const client = new QuiverAI();
+
+const logo = await client.svgs..generations.create({
+  model: "arrow-0.5",
+  input: "A logo for the next AI Design startup",
+});
+```
+
+</RequestExample>
 
 ## Make it yours
 
