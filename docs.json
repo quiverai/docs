@@ -1,6 +1,6 @@
 {
 	"$schema": "https://mintlify.com/docs.json",
-	"theme": "mint",
+	"theme": "almond",
 	"name": "QuiverAI Docs",
 	"colors": {
 		"primary": "#333333",
@@ -129,8 +129,7 @@
 	"background": {
     "color": {
       "dark": "#333333"
-    },
-    "decoration": "windows"
+    }
   },
 	"integrations": {
 		"posthog": {
