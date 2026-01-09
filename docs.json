@@ -34,27 +34,25 @@
                 ]
               },
               {
-                "group": "Customization",
-                "pages": [
-                  "essentials/settings",
-                  "essentials/navigation"
-                ]
-              },
-              {
-                "group": "Writing content",
+                "group": "Arrow 0.5",
                 "pages": [
                   "essentials/markdown",
-                  "essentials/code",
-                  "essentials/images",
-                  "essentials/reusable-snippets"
+                  "essentials/code"
                 ]
               },
               {
-                "group": "AI tools",
+                "group": "API Integration",
                 "pages": [
                   "ai-tools/cursor",
                   "ai-tools/claude-code",
                   "ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Platform",
+                "pages": [
+                  "essentials/settings",
+                  "essentials/navigation"
                 ]
               }
             ]

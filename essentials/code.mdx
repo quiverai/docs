@@ -1,35 +1,29 @@
 ---
-title: 'Code blocks'
-description: 'Display inline code and code blocks'
-icon: 'code'
+title: "Image to SVG"
+description: "Learn how to prompt a model to turn images into SVGs"
+icon: "code"
 ---
 
-## Inline code
+Here's a simple example how to generate an SVG from a text prompt.
 
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
+<CodeGroup>
 
-```
-To denote a `word` or `phrase` as code, enclose it in backticks (`).
-```
+```typescript javascript
+import QuiverAI from "quiverai";
+const client = new QuiverAI();
 
-## Code blocks
-
-Use [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) by enclosing code in three backticks and follow the leading ticks with the programming language of your snippet to get syntax highlighting. Optionally, you can also write the name of your code after the programming language.
-
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
+const logo = await client.svgs..generations.create({
+  model: "arrow-0.5",
+  input: "A logo for the next AI Design startup",
+});
 ```
 
-````md
-```java HelloWorld.java
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-````
+</CodeGroup>
+
+## Preparing the image
+
+To achieve the best result, cropping an image can significantly improve the model's performance.
+
+![Create A Highly Refined Ultra Profession 2ILO R Phrj6a7v O8S Lu6vq Dd F Jxy SLQWCA91U Pn0g Nt Q](/images/create-a-highly-refined-ultra-profession_2ILO-rPHRJ6a7vO8SLu6VQ_DdFJxySLQWCA91UPn0gNtQ.jpeg)
+
+![Screenshot 2026 01 09 At 20 11 53](/images/Screenshot2026-01-09at20.11.53.png)
