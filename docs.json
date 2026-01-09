@@ -122,5 +122,16 @@
 	},
 	"fonts": {
 		"family": "Geist"
-	}
+  },
+  "background": {
+    "color": {
+      "dark": "#333333"
+    }
+  },
+  "integrations": {
+    "posthog": {
+      "apiHost": "https://us.posthog.com",
+      "apiKey": "phc_T0tw2DZmYe2T4wvkL54viSsfdXM6XGk22YrCwshpZuM"
+    }
+  }
 }
