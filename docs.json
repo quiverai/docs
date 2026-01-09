@@ -124,10 +124,11 @@
 		"family": "Geist"
 	},
 	"background": {
-		"color": {
-			"dark": "#333333"
-		}
-	},
+    "color": {
+      "dark": "#333333"
+    },
+    "decoration": "grid"
+  },
 	"integrations": {
 		"posthog": {
 			"apiHost": "https://us.posthog.com",
