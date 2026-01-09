@@ -1,7 +1,7 @@
 ---
 title: "Image to SVG"
 description: "Learn how to prompt a model to turn images into SVGs"
-icon: "code"
+icon: "image"
 ---
 
 Here's a simple example how to generate an SVG from a text prompt.
@@ -24,6 +24,10 @@ const logo = await client.svgs..generations.create({
 
 To achieve the best result, cropping an image can significantly improve the model's performance.
 
-![Create A Highly Refined Ultra Profession 2ILO R Phrj6a7v O8S Lu6vq Dd F Jxy SLQWCA91U Pn0g Nt Q](/images/create-a-highly-refined-ultra-profession_2ILO-rPHRJ6a7vO8SLu6VQ_DdFJxySLQWCA91UPn0gNtQ.jpeg)
+![Uncropped Image](/images/create-a-highly-refined-ultra-profession_2ILO-rPHRJ6a7vO8SLu6VQ_DdFJxySLQWCA91UPn0gNtQ.jpeg)
 
-![Screenshot 2026 01 09 At 20 11 53](/images/Screenshot2026-01-09at20.11.53.png)
+![Cropped image](/images/Screenshot2026-01-09at20.11.53.png)
+
+<Note>
+  Alternatively use the`auto-crop`flag in your API requests
+</Note>

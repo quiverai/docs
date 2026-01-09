@@ -30,12 +30,14 @@
                 "pages": [
                   "index",
                   "quickstart",
+                  "contact-us/guides/getting-started/scalable-vector-graphics-svg",
                   "development"
                 ]
               },
               {
                 "group": "Arrow 0.5",
                 "pages": [
+                  "contact-us/guides/arrow-0-5/overview",
                   "essentials/markdown",
                   "essentials/code"
                 ]
@@ -52,7 +54,8 @@
                 "group": "Platform",
                 "pages": [
                   "essentials/settings",
-                  "essentials/navigation"
+                  "contact-us/guides/platform/playground",
+                  "contact-us/guides/platform/developer-platform"
                 ]
               }
             ]
