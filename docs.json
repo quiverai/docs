@@ -23,9 +23,9 @@
         }
       ]
     },
-    "anchors": [
+    "products": [
       {
-        "anchor": "Documentation",
+        "product": "Documentation",
         "tabs": [
           {
             "tab": "API reference",
