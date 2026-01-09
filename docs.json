@@ -9,66 +9,75 @@
 	},
 	"favicon": "/favicon.svg",
 	"navigation": {
-		"tabs": [
-			{
-				"tab": "Guides",
-				"groups": [
-					{
-						"group": "Getting started",
-						"pages": ["index", "quickstart", "development"]
-					},
-					{
-						"group": "Customization",
-						"pages": ["essentials/settings", "essentials/navigation"]
-					},
-					{
-						"group": "Writing content",
-						"pages": [
-							"essentials/markdown",
-							"essentials/code",
-							"essentials/images",
-							"essentials/reusable-snippets"
-						]
-					},
-					{
-						"group": "AI tools",
-						"pages": [
-							"ai-tools/cursor",
-							"ai-tools/claude-code",
-							"ai-tools/windsurf"
-						]
-					}
-				]
-			},
-			{
-				"tab": "API reference",
-				"groups": [
-					{
-						"group": "API documentation",
-						"pages": ["api-reference/introduction"]
-					},
-					{
-						"group": "Endpoints",
-						"openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simple/quiver.openapi.yml"
-					}
-				]
-			}
-		],
-		"global": {
-			"anchors": [
-				{
-					"anchor": "Documentation",
-					"href": "https://mintlify.com/docs",
-					"icon": "book-open-cover"
-				},
-				{
-					"anchor": "Blog",
-					"href": "https://mintlify.com/blog",
-					"icon": "newspaper"
-				}
-			]
-		}
-	},
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "icon": "book-open-cover",
+          "href": "https://mintlify.com/docs"
+        },
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://quiver.ai/blog"
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "index",
+              "quickstart",
+              "development"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "essentials/settings",
+              "essentials/navigation"
+            ]
+          },
+          {
+            "group": "Writing content",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images",
+              "essentials/reusable-snippets"
+            ]
+          },
+          {
+            "group": "AI tools",
+            "pages": [
+              "ai-tools/cursor",
+              "ai-tools/claude-code",
+              "ai-tools/windsurf"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API reference",
+        "groups": [
+          {
+            "group": "API documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simple/quiver.openapi.yml"
+          }
+        ]
+      }
+    ]
+  },
 	"logo": {
 		"light": "/images/logo-wordmark.svg",
 		"dark": "/images/logo-wordmark.svg"
