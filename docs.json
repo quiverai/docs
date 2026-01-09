@@ -49,7 +49,7 @@
 					},
 					{
 						"group": "Endpoints",
-						"openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/main/quiver.openapi.yml"
+						"openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simplification/quiver.openapi.yml"
 					}
 				]
 			}
