@@ -9,19 +9,39 @@
 	},
 	"favicon": "/favicon.svg",
 	"navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://quiver.ai/blog"
+        },
+        {
+          "anchor": "Contact",
+          "icon": "headset",
+          "href": "https://quiver.ai/contact"
+        }
+      ]
+    },
     "anchors": [
       {
-        "anchor": "Contact Us",
-        "global": {
-          "anchors": [
-            {
-              "anchor": "Blog",
-              "icon": "newspaper",
-              "href": "https://quiver.ai/blog"
-            }
-          ]
-        },
+        "anchor": "Documentation",
         "tabs": [
+          {
+            "tab": "API reference",
+            "groups": [
+              {
+                "group": "API documentation",
+                "pages": [
+                  "api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Endpoints",
+                "openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simple/quiver.openapi.yml"
+              }
+            ]
+          },
           {
             "tab": "Guides",
             "groups": [
@@ -57,21 +77,6 @@
                   "contact-us/guides/platform/playground",
                   "contact-us/guides/platform/developer-platform"
                 ]
-              }
-            ]
-          },
-          {
-            "tab": "API reference",
-            "groups": [
-              {
-                "group": "API documentation",
-                "pages": [
-                  "api-reference/introduction"
-                ]
-              },
-              {
-                "group": "Endpoints",
-                "openapi": "https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/simple/quiver.openapi.yml"
               }
             ]
           }
