@@ -44,10 +44,6 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
 
         ### Send your first request
 
-        ```
-        
-        ```
-
         See the [API Reference ](/api-reference/introduction)for full details and paramters.
       </Tab>
       <Tab title="REST API">
@@ -57,7 +53,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
 
         ```bash cURL
         curl --request POST \
-          --url https://api.quiver.ai/v1/svgs/vectorizations \
+          --url https://api.quiver.ai/v1/svgs/generations \
           --header 'Authorization: Bearer <token>' \
           --header 'Content-Type: application/json' \
           --data '
@@ -68,8 +64,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
           "temperature": 1,
           "frequency_penalty": 0,
           "presence_penalty": 0,
-          "simplify_if_needed": false,
-          "auto_crop": false
+          "aspect_ratio": "1:1"
         }
         '
         ```
@@ -78,7 +73,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         ```python Python
         import requests
         
-        url = "https://api.quiver.ai/v1/svgs/vectorizations"
+        url = "https://api.quiver.ai/v1/svgs/generations"
         
         payload = {
             "n": 1,
@@ -87,8 +82,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
             "temperature": 1,
             "frequency_penalty": 0,
             "presence_penalty": 0,
-            "simplify_if_needed": False,
-            "auto_crop": False
+            "aspect_ratio": "1:1"
         }
         headers = {
             "Authorization": "Bearer <token>",
@@ -107,7 +101,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-          CURLOPT_URL => "https://api.quiver.ai/v1/svgs/vectorizations",
+          CURLOPT_URL => "https://api.quiver.ai/v1/svgs/generations",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -121,8 +115,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
             'temperature' => 1,
             'frequency_penalty' => 0,
             'presence_penalty' => 0,
-            'simplify_if_needed' => false,
-            'auto_crop' => false
+            'aspect_ratio' => '1:1'
           ]),
           CURLOPT_HTTPHEADER => [
             "Authorization: Bearer <token>",
@@ -155,9 +148,9 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         
         func main() {
         
-        	url := "https://api.quiver.ai/v1/svgs/vectorizations"
+        	url := "https://api.quiver.ai/v1/svgs/generations"
         
-        	payload := strings.NewReader("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"simplify_if_needed\": false,\n  \"auto_crop\": false\n}")
+        	payload := strings.NewReader("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
         
         	req, _ := http.NewRequest("POST", url, payload)
         
@@ -176,11 +169,30 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
 
         
         ```java Java
-        HttpResponse<String> response = Unirest.post("https://api.quiver.ai/v1/svgs/vectorizations")
+        HttpResponse<String> response = Unirest.post("https://api.quiver.ai/v1/svgs/generations")
           .header("Authorization", "Bearer <token>")
           .header("Content-Type", "application/json")
-          .body("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"simplify_if_needed\": false,\n  \"auto_crop\": false\n}")
+          .body("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
           .asString();
+        ```
+
+        
+        ```ruby Ruby
+        require 'uri'
+        require 'net/http'
+        
+        url = URI("https://api.quiver.ai/v1/svgs/generations")
+        
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl = true
+        
+        request = Net::HTTP::Post.new(url)
+        request["Authorization"] = 'Bearer <token>'
+        request["Content-Type"] = 'application/json'
+        request.body = "{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}"
+        
+        response = http.request(request)
+        puts response.read_body
         ```
 
         </CodeGroup>
