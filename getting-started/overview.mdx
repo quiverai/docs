@@ -8,7 +8,7 @@ description: "Learn how to use QuiverAI models and find the right parameters in 
 Get your documentation site up and running in minutes
 
 ```typescript
-import QuiverAI from "quiverai";
+import QuiverAI from "@quiverai/sdk";
 const client = new QuiverAI();
 
 const logo = await client.svgs..generations.create({
@@ -32,12 +32,10 @@ The best model for SVG generation and vectorization.
 ## Start building
 
 <Columns cols={2}>
-  <Card title="Text to SVG" icon="message" horizontal href="/getting-started/quickstart">
+  <Card title="Text to SVG" icon="message" horizontal href="/models/text-to-svg">
     Use the API to generate turn your ideas in to SVGs.
   </Card>
-  <Card title="Image to SVG" icon="image" horizontal href="/platform/overview">
-    Turn images into SVGs using the QuiverAI API
+  <Card title="Image to SVG" icon="image" horizontal href="/models/image-to-svg">
+    Turn images into SVGs using the QuiverAI AP
   </Card>
 </Columns>
-
-## 
