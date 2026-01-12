@@ -11,7 +11,7 @@ Get your documentation site up and running in minutes
 import QuiverAI from "@quiverai/sdk";
 const client = new QuiverAI();
 
-const logo = await client.svgs..generations.create({
+const logo = await client.svgs.generations.create({
   model: "arrow-0.5",
   input: "A logo for the next AI Design startup",
 });
