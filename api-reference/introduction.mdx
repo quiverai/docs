@@ -1,33 +1,18 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Introduction"
+description: "Learn how to use the QuiverAI API."
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+  This API reference describes the RESTful, streaming, and realtime APIs you can use to interact with the QuiverAI platform. REST APIs are usable via HTTP in any environment that supports HTTP requests.
 </Note>
-
-## Welcome
-
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration).
-
-<Card
-  title="Quiver API Endpoints"
-  icon="code"
-  href="https://raw.githubusercontent.com/quiverai/quiverai-openapi/refs/heads/main/quiver.openapi.yml"
->
-  View the OpenAPI specification file
-</Card>
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+The OpenAI API uses API keys for authentication. Create, manage, and learn more about API keys in your [<u>organization settings</u>](https://platform.openai.com/settings/organization/api-keys) or follow the [Quickstart Guide](/getting-started/quickstart).
+
+**Remember that your API key is a secret!** Do not share it with others or expose it in any client-side code (browsers, apps). API keys should be securely loaded from an environment variable or key management service on the server.
 
 ```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+Authorization: Bearer OPENAI_API_KEY
 ```
