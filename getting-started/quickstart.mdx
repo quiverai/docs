@@ -42,6 +42,16 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
 
         ### Send your first request
 
+        ```typescript
+        import QuiverAI from "@quiverai/sdk";
+        const client = new QuiverAI();
+        
+        const logo = await client.svgs.generations.create({
+          model: "arrow-0.5",
+          input: "A logo for the next AI Design startup",
+        });
+        ```
+
         See the [API Reference](/api-reference/introduction) for full details and parameters.
       </Tab>
       <Tab title="REST API">
@@ -194,7 +204,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         ```
 
         </CodeGroup>
-        
+
         ### Send your first request
 
         See the [API Reference](/api-reference/introduction) for full details and parameters.
