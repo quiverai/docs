@@ -1,45 +1,214 @@
 ---
-title: "Overview"
-description: "Learn how to use QuiverAI models and find the right parameters in the Platform's Playground."
+title: "Quickstart"
+description: "Take your first steps with the QuiverAI API."
 ---
 
-## Developer Quickstart
+After you complete this setup, you are ready to create your first SVGs using the QuiverAI API.
 
-Get your documentation site up and running in minutes
+## Before you begin
 
-```typescript
-import QuiverAI from "@quiverai/sdk";
-const client = new QuiverAI();
+You first need a QuiverAI account. To create your account go to [quiver.ai/start ](https://quiver.ai/start)and complete the onboarding. The QuiverAI platform offers a Playground to explore our models and manage your API keys, usage and other configurations. To learn more about the QuiverAI platform visit the [Platform Docs](/platform/overview).
 
-const logo = await client.svgs..generations.create({
-  model: "arrow-0.5",
-  input: "A logo for the next AI Design startup",
-});
-```
+## 
 
-<Card title="Get started" icon="rocket" color="#fff9f9" horizontal href="/getting-started/quickstart">
-  Make your first API request in minutes. Learn the basics of the OpenAI platform.
-</Card>
+<Steps>
+  <Step title="Create an API key">
+    The QuiverAI API uses bearar authentication to verify incoming requests. To create an API key go to API Keys section on the [QuiverAI Platform](https://platform.quiver.ai).
 
-## Models
+    ![Api Keys Examples](/images/api-keys-examples.png)
+  </Step>
+  <Step title="Make your first request">
+    <Tabs>
+      <Tab title="Node.js SDK">
+        When using a Node.js framework like React, Vue or Svelete we recommend using the official QuiverAI [Node.js SDK](https://www.npmjs.com/package/@quiverai/sdk).
 
-<Columns cols={2}>
-  <Card title="arrow 0.5" color="#ffffff" img="/images/arrow-0-5.png">
-    The best model for SVG generation and Image vectorizations
-  </Card>
-  <Card title="arrow 1.0 preview" img="/images/arrow-1-preview.png">
-    Take a glimpse into the feature of SVG vectorizations.
-  </Card>
-</Columns>
+        ### Install the QuiverAI Node.js SDK
 
+        <CodeGroup>
 
-## Start building
+        ```bash npm
+        npm install @quiverai/sdk
+        ```
 
-<Columns cols={2}>
-  <Card title="Text to SVG" icon="message" horizontal href="/models/text-to-svg">
-    Use the API to generate turn your ideas in to SVGs.
-  </Card>
-  <Card title="Image to SVG" icon="image" horizontal href="/models/image-to-svg">
-    Turn images into SVGs using the QuiverAI AP
-  </Card>
-</Columns>
+        
+        ```bash pnpm
+        pnpm add @quiverai/sdk
+        ```
+
+        
+        ```bash bun
+        bun add @quiverai/sdk
+        ```
+
+        </CodeGroup>
+
+        ### Send your first request
+
+        See the [API Reference](/api-reference/introduction) for full details and parameters.
+      </Tab>
+      <Tab title="REST API">
+        Currently we only provide official SDK support for Node.js. To call the QuiverAI API with any other language directly use HTTP requests.
+
+        <CodeGroup>
+
+        ```bash cURL
+        curl --request POST \
+          --url https://api.quiver.ai/v1/svgs/generations \
+          --header 'Authorization: Bearer <token>' \
+          --header 'Content-Type: application/json' \
+          --data '
+        {
+          "n": 1,
+          "top_p": 1,
+          "stream": false,
+          "temperature": 1,
+          "frequency_penalty": 0,
+          "presence_penalty": 0,
+          "aspect_ratio": "1:1"
+        }
+        '
+        ```
+
+        
+        ```
+        
+        ```
+
+        
+        ```python Python
+        import requests
+        
+        url = "https://api.quiver.ai/v1/svgs/generations"
+        
+        payload = {
+            "n": 1,
+            "top_p": 1,
+            "stream": False,
+            "temperature": 1,
+            "frequency_penalty": 0,
+            "presence_penalty": 0,
+            "aspect_ratio": "1:1"
+        }
+        headers = {
+            "Authorization": "Bearer <token>",
+            "Content-Type": "application/json"
+        }
+        
+        response = requests.post(url, json=payload, headers=headers)
+        
+        print(response.text)
+        ```
+
+        
+        ```php PHP
+        <?php
+        
+        $curl = curl_init();
+        
+        curl_setopt_array($curl, [
+          CURLOPT_URL => "https://api.quiver.ai/v1/svgs/generations",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "POST",
+          CURLOPT_POSTFIELDS => json_encode([
+            'n' => 1,
+            'top_p' => 1,
+            'stream' => false,
+            'temperature' => 1,
+            'frequency_penalty' => 0,
+            'presence_penalty' => 0,
+            'aspect_ratio' => '1:1'
+          ]),
+          CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer <token>",
+            "Content-Type: application/json"
+          ],
+        ]);
+        
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        
+        curl_close($curl);
+        
+        if ($err) {
+          echo "cURL Error #:" . $err;
+        } else {
+          echo $response;
+        }
+        ```
+
+        
+        ```go Go
+        package main
+        
+        import (
+        	"fmt"
+        	"strings"
+        	"net/http"
+        	"io"
+        )
+        
+        func main() {
+        
+        	url := "https://api.quiver.ai/v1/svgs/generations"
+        
+        	payload := strings.NewReader("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
+        
+        	req, _ := http.NewRequest("POST", url, payload)
+        
+        	req.Header.Add("Authorization", "Bearer <token>")
+        	req.Header.Add("Content-Type", "application/json")
+        
+        	res, _ := http.DefaultClient.Do(req)
+        
+        	defer res.Body.Close()
+        	body, _ := io.ReadAll(res.Body)
+        
+        	fmt.Println(string(body))
+        
+        }
+        ```
+
+        
+        ```java Java
+        HttpResponse<String> response = Unirest.post("https://api.quiver.ai/v1/svgs/generations")
+          .header("Authorization", "Bearer <token>")
+          .header("Content-Type", "application/json")
+          .body("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
+          .asString();
+        ```
+
+        
+        ```ruby Ruby
+        require 'uri'
+        require 'net/http'
+        
+        url = URI("https://api.quiver.ai/v1/svgs/generations")
+        
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl = true
+        
+        request = Net::HTTP::Post.new(url)
+        request["Authorization"] = 'Bearer <token>'
+        request["Content-Type"] = 'application/json'
+        request.body = "{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}"
+        
+        response = http.request(request)
+        puts response.read_body
+        ```
+
+        </CodeGroup>
+        
+        ### Send your first request
+
+        See the [API Reference](/api-reference/introduction) for full details and parameters.
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="New Step">
+    
+  </Step>
+</Steps>
