@@ -2,3 +2,31 @@
 title: 'Scalable Vector Graphics (SVG)'
 ---
 
+SVG (Scalable Vector Graphics) is an XML-based vector image format. Unlike raster images (PNG/JPEG), SVGs scale cleanly to any size, making them ideal for logos, icons, illustrations, and UI assets.
+
+## Why SVG matters
+
+- **Crisp at any resolution**: Perfect for responsive UIs and high-DPI displays.
+- **Editable**: You can tweak colors, strokes, and paths in design tools or code.
+- **Small and fast**: Well-optimized SVGs can be lightweight and compress well.
+- **Programmable**: CSS and JS can style and animate SVGs.
+
+## Core concepts
+
+- **`viewBox`**: Defines the internal coordinate system. A good `viewBox` makes your SVG easy to scale and position.
+- **Paths and shapes**: Most generated SVGs are a mix of `<path>`, `<circle>`, `<rect>`, etc.
+- **Fill and stroke**:
+  - Use `fill` for solid areas.
+  - Use `stroke` for outlines (with `stroke-width`, `stroke-linecap`, etc).
+
+## Using generated SVGs safely
+
+- **Sanitize untrusted SVGs**: If you render SVGs coming from untrusted sources, sanitize them first (SVGs can embed scripts).
+- **Prefer inline SVG for theming**: Inline SVG lets you style with CSS variables and class names.
+- **Optimize for production**: Run output through an optimizer (for example SVGO) if you need smaller payloads.
+
+## Tips for better results with QuiverAI
+
+- **Be explicit about style**: e.g. “flat monochrome icon”, “duotone illustration”, “clean geometric lines”.
+- **Constrain aspect ratio**: Use `aspect_ratio` to get predictable layouts.
+- **For image vectorization**: Crop tightly, and use `auto_crop` only as a fallback when you can’t crop manually.

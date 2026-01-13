@@ -1,6 +1,6 @@
 ---
 title: "Text to SVG"
-description: "Learn how to prompt a model to turn images into SVGs"
+description: "Learn how to prompt a model to turn text into SVGs."
 icon: "message"
 ---
 
@@ -11,12 +11,12 @@ Here's a simple example how to generate an SVG from a text prompt.
 <CodeGroup>
 
 ```typescript javascript
-import QuiverAI from "quiverai";
+import QuiverAI from "@quiverai/sdk";
 const client = new QuiverAI();
 
 const logo = await client.svgs.generations.create({
   model: "arrow-0.5",
-  input: "A logo for the next AI Design startup",
+  prompt: "A logo for the next AI Design startup",
 });
 ```
 

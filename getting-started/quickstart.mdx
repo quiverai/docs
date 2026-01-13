@@ -13,12 +13,14 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
   <Step title="Create an API key">
     The QuiverAI API uses bearer authentication to verify incoming requests. To create an API key go to API Keys section on the [QuiverAI Platform](https://platform.quiver.ai).
 
+    We recommend storing the key in an environment variable (for example, `QUIVERAI_API_KEY`) and never committing it to source control.
+
     ![Api Keys Examples](/images/api-keys-examples.png)
   </Step>
   <Step title="Make your first request">
     <Tabs>
       <Tab title="Node.js SDK">
-        When using a Node.js framework like React, Vue or Svelete we recommend using the official QuiverAI [Node.js SDK](https://www.npmjs.com/package/@quiverai/sdk).
+        When using a Node.js framework like React, Vue, or Svelte, we recommend using the official QuiverAI [Node.js SDK](https://www.npmjs.com/package/@quiverai/sdk).
 
         ### Install the QuiverAI Node.js SDK
 
@@ -48,7 +50,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         
         const logo = await client.svgs.generations.create({
           model: "arrow-0.5",
-          input: "A logo for the next AI Design startup",
+          prompt: "A logo for the next AI Design startup",
         });
         ```
 
@@ -64,10 +66,12 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         ```bash cURL
         curl --request POST \
           --url https://api.quiver.ai/v1/svgs/generations \
-          --header 'Authorization: Bearer <token>' \
+          --header 'Authorization: Bearer <QUIVERAI_API_KEY>' \
           --header 'Content-Type: application/json' \
           --data '
         {
+          "model": "arrow-0.5",
+          "prompt": "A logo for the next AI Design startup",
           "n": 1,
           "top_p": 1,
           "stream": false,
@@ -86,6 +90,8 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         url = "https://api.quiver.ai/v1/svgs/generations"
         
         payload = {
+            "model": "arrow-0.5",
+            "prompt": "A logo for the next AI Design startup",
             "n": 1,
             "top_p": 1,
             "stream": False,
@@ -95,7 +101,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
             "aspect_ratio": "1:1"
         }
         headers = {
-            "Authorization": "Bearer <token>",
+            "Authorization": "Bearer <QUIVERAI_API_KEY>",
             "Content-Type": "application/json"
         }
         
@@ -119,6 +125,8 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
           CURLOPT_POSTFIELDS => json_encode([
+            'model' => 'arrow-0.5',
+            'prompt' => 'A logo for the next AI Design startup',
             'n' => 1,
             'top_p' => 1,
             'stream' => false,
@@ -128,7 +136,7 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
             'aspect_ratio' => '1:1'
           ]),
           CURLOPT_HTTPHEADER => [
-            "Authorization: Bearer <token>",
+            "Authorization: Bearer <QUIVERAI_API_KEY>",
             "Content-Type: application/json"
           ],
         ]);
@@ -160,11 +168,11 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         
         	url := "https://api.quiver.ai/v1/svgs/generations"
         
-        	payload := strings.NewReader("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
+        	payload := strings.NewReader("{\n  \"model\": \"arrow-0.5\",\n  \"prompt\": \"A logo for the next AI Design startup\",\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
         
         	req, _ := http.NewRequest("POST", url, payload)
         
-        	req.Header.Add("Authorization", "Bearer <token>")
+        	req.Header.Add("Authorization", "Bearer <QUIVERAI_API_KEY>")
         	req.Header.Add("Content-Type", "application/json")
         
         	res, _ := http.DefaultClient.Do(req)
@@ -180,9 +188,9 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         
         ```java Java
         HttpResponse<String> response = Unirest.post("https://api.quiver.ai/v1/svgs/generations")
-          .header("Authorization", "Bearer <token>")
+          .header("Authorization", "Bearer <QUIVERAI_API_KEY>")
           .header("Content-Type", "application/json")
-          .body("{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
+          .body("{\n  \"model\": \"arrow-0.5\",\n  \"prompt\": \"A logo for the next AI Design startup\",\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}")
           .asString();
         ```
 
@@ -197,15 +205,31 @@ You first need a QuiverAI account. To create your account go to [quiver.ai/start
         http.use_ssl = true
         
         request = Net::HTTP::Post.new(url)
-        request["Authorization"] = 'Bearer <token>'
+        request["Authorization"] = 'Bearer <QUIVERAI_API_KEY>'
         request["Content-Type"] = 'application/json'
-        request.body = "{\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}"
+        request.body = "{\n  \"model\": \"arrow-0.5\",\n  \"prompt\": \"A logo for the next AI Design startup\",\n  \"n\": 1,\n  \"top_p\": 1,\n  \"stream\": false,\n  \"temperature\": 1,\n  \"frequency_penalty\": 0,\n  \"presence_penalty\": 0,\n  \"aspect_ratio\": \"1:1\"\n}"
         
         response = http.request(request)
         puts response.read_body
         ```
 
         </CodeGroup>
+
+        ### Handling errors and rate limits
+
+        The API returns a JSON error payload on failures (for example, `401` and `429`).
+
+        ```json
+        {
+          "type": "rate_limit_error",
+          "message": "Rate limit exceeded. Please try again later.",
+          "code": "rate_limit_exceeded",
+          "param": null
+        }
+        ```
+
+        - **401 Unauthorized**: Your key is missing/invalid. Double-check the `Authorization: Bearer <QUIVERAI_API_KEY>` header.
+        - **429 Too Many Requests**: Back off and retry with exponential delay (and respect any `Retry-After` header if present).
 
         See the [API Reference](/api-reference/introduction) for full details and parameters.
       </Tab>
