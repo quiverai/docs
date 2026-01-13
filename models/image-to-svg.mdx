@@ -14,7 +14,7 @@ Here's a simple example how to generate an SVG from a text prompt.
 import QuiverAI from "quiverai";
 const client = new QuiverAI();
 
-const logo = await client.svgs..generations.create({
+const logo = await client.svgs.generations.create({
   model: "arrow-0.5",
   input: "A logo for the next AI Design startup",
 });
