@@ -16,3 +16,33 @@ The QuiverAI API uses API keys for authentication. Create and manage API keys in
 ```json
 Authorization: Bearer <QUIVERAI_API_KEY>
 ```
+
+## Base URL
+
+All API requests should be made to: `https://api.quiver.ai/v1`
+
+## Request and response format
+
+The API accepts JSON-encoded request bodies and returns JSON-encoded responses. Include the `Content-Type: application/json` header in all requests.
+
+## Rate limits
+
+The API enforces rate limits to ensure platform stability. If you exceed your rate limit, you'll receive a `429 Too Many Requests` response. Implement exponential backoff and respect the `Retry-After` header when present.
+
+## Error handling
+
+The API returns standard HTTP status codes and JSON error payloads:
+
+- `401 Unauthorized` - Invalid or missing API key
+- `429 Too Many Requests` - Rate limit exceeded
+- `500 Internal Server Error` - Server error
+
+Error responses include a `type`, `message`, `code`, and `param` field to help you debug issues.
+
+## Official SDKs
+
+We provide an official Node.js SDK. For other languages, use standard HTTP requests.
+
+```bash filename
+npm install @quiverai/sdk
+```
