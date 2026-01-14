@@ -48,6 +48,7 @@
           },
           {
             "group": "Platform",
+            "hidden": true,
             "pages": [
               "platform/overview",
               "platform/playground",
@@ -130,10 +131,10 @@
 		}
 	},
 	"integrations": {
-		"posthog": {
-			"apiHost": "https://us.posthog.com",
-			"apiKey": "phc_T0tw2DZmYe2T4wvkL54viSsfdXM6XGk22YrCwshpZuM"
-		}
-	},
+    "posthog": {
+      "apiHost": "https://us.posthog.com",
+      "apiKey": "phc_4DPxIjdMEe4NoluialJeeg8YcqseLRQI6fPOz4C2Fow"
+    }
+  },
 	"description": "Build with QuiverAI: Explore our API docs, guides, and dynamic examples to jumpstart your development."
 }
